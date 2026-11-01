@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>班會好好玩 · 中學生班級經營遊戲庫</title>
+<meta name="description" content="38 個適合中學生的班會及派對遊戲，按時間、人數、場地篩選，附帶領貼士、變化玩法與 5 個 45 分鐘班會流程範本。">
+<meta name="theme-color" content="#FBF8F2">
+<meta property="og:title" content="班會好好玩 · 中學生班級經營遊戲庫">
+<meta property="og:description" content="38 個班會遊戲 + 計時器 + 隨機分組 + 班會流程範本。開學、考試後、衝突修復，一頁搞掂。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%231F1B16'/%3E%3Ctext x='16' y='22' font-size='16' font-family='serif' fill='%23FBF8F2' text-anchor='middle'%3E班%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- ============ icon sprite ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-time" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+    </symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="3.2"/><path d="M22 20v-2a4 4 0 0 0-3-3.8"/><path d="M16.5 4.2A3.2 3.2 0 0 1 16.5 10"/>
+    </symbol>
+    <symbol id="i-door" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 21V4a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v17"/><path d="M2 21h20"/><circle cx="13.5" cy="12" r="1"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.8"/>
+    </symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor">
+      <path d="m12 3.6 2.6 5.4 5.9.8-4.3 4.1 1.1 5.9-5.3-2.9-5.3 2.9 1.1-5.9L3.5 9.8l5.9-.8Z"/>
+    </symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m6 9 6 6 6-6"/>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+    </symbol>
+    <symbol id="i-print" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 9V3h12v6"/><path d="M6 18H4a1 1 0 0 1-1-1v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2"/><path d="M6 14h12v7H6z"/>
+    </symbol>
+    <symbol id="i-shuffle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/>
+    </symbol>
+    <symbol id="i-timer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2"/><path d="M9 2h6"/>
+    </symbol>
+    <symbol id="i-group" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ header ============ -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="brand-mark">班</span>
+      <span class="brand-text"><b>班會好好玩</b><small>Class Party Games</small></span>
+    </a>
+    <nav class="nav" aria-label="主要導覽">
+      <a href="#games">遊戲庫</a>
+      <a href="#flows">班會流程</a>
+      <a href="#principles">帶活動心法</a>
+      <a href="#tools">工具箱</a>
+    </nav>
+    <button class="header-print" type="button" onclick="window.print()">
+      <svg width="15" height="15" aria-hidden="true"><use href="#i-print"/></svg><span>列印</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ hero ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow"><span class="dot"></span>中學 · 班主任 · 班會</span>
+      <h1>把班會，變成<br>全班<em>期待</em>的那一節課。</h1>
+      <p class="lede">
+        38 個為中學生設計的派對遊戲，按時間、人數、場地即時篩選。每個遊戲都寫明玩法、物資、帶領貼士與變化版本——不是為了熱鬧，而是為了讓班裡多一點信任、少一點磨擦。
+      </p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" type="button" data-random>
+          <svg width="17" height="17" aria-hidden="true"><use href="#i-shuffle"/></svg>
+          隨機抽一個遊戲
+        </button>
+        <a class="btn btn-ghost" href="#flows">
+          睇 45 分鐘流程範本
+          <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat"><b id="countTotal">38</b><span>個遊戲</span></div>
+        <div class="stat"><b>6</b><span>大類型</span></div>
+        <div class="stat"><b>5</b><span>班會流程範本</span></div>
+        <div class="stat"><b>0</b><span>需要下載</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ filters ============ -->
+  <section class="filters" aria-label="篩選遊戲">
+    <div class="wrap">
+      <div class="filter-row">
+        <div class="search">
+          <svg width="16" height="16" aria-hidden="true"><use href="#i-search"/></svg>
+          <label class="sr-only" for="search">搜尋遊戲</label>
+          <input id="search" type="search" placeholder="搜尋遊戲、物資或關鍵字，例如「膠紙」「信任」">
+        </div>
+        <div class="select-wrap">
+          <label class="sr-only" for="durSel">時間</label>
+          <select id="durSel">
+            <option value="all">任何時間</option>
+            <option value="short">10 分鐘內</option>
+            <option value="mid">10–20 分鐘</option>
+            <option value="long">20 分鐘以上</option>
+          </select>
+        </div>
+        <div class="select-wrap">
+          <label class="sr-only" for="playerSel">人數</label>
+          <select id="playerSel">
+            <option value="all">任何人數</option>
+            <option value="small">15 人以下</option>
+            <option value="mid">16–30 人</option>
+            <option value="large">31 人以上</option>
+          </select>
+        </div>
+        <div class="select-wrap">
+          <label class="sr-only" for="placeSel">場地</label>
+          <select id="placeSel">
+            <option value="all">任何場地</option>
+            <option value="課室">課室</option>
+            <option value="操場">操場／戶外</option>
+          </select>
+        </div>
+        <button class="btn-mini" id="favOnly" type="button" aria-pressed="false">
+          <svg width="14" height="14" aria-hidden="true"><use href="#i-star"/></svg>只看收藏
+        </button>
+        <button class="btn-mini" id="resetBtn" type="button">重設</button>
+        <span class="result-count" id="count">38 個遊戲</span>
+      </div>
+      <div class="filter-row">
+        <div class="chips" id="catChips" role="group" aria-label="遊戲類型"></div>
+        <button class="btn-mini" type="button" data-random style="margin-left:auto">
+          <svg width="14" height="14" aria-hidden="true"><use href="#i-shuffle"/></svg>抽一個
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ games ============ -->
+  <section class="section" id="games">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>遊戲庫</h2>
+        <p>點擊卡片展開玩法。星號可以收藏常用的遊戲，存在你自己的瀏覽器。</p>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ flows ============ -->
+  <section class="section" id="flows" style="background:#F5EFE4;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>班會流程範本</h2>
+        <p>直接照抄就可以上課。時間已計好，包含收心與反思，不需要自己拼。</p>
+      </div>
+      <div class="flows">
+
+        <article class="flow">
+          <span class="flow-tag">每週 15 分鐘</span>
+          <h3>迷你班會</h3>
+          <p class="flow-sub">班主任課／早讀後的短時段，維持班級溫度的最低成本。</p>
+          <ol class="timeline">
+            <li class="key"><span class="t">0–5 分鐘</span><span class="n">情緒溫度計</span><span class="d">貼顏色卡，不強迫分享。</span></li>
+            <li><span class="t">5–13 分鐘</span><span class="n">數字炸彈（7 的倍數）</span><span class="d">短、快、全班參與，笑聲收尾。</span></li>
+            <li><span class="t">13–15 分鐘</span><span class="n">一分鐘反思</span><span class="d">寫一句「今日帶走甚麼」。</span></li>
+          </ol>
+        </article>
+
+        <article class="flow">
+          <span class="flow-tag">開學第一週</span>
+          <h3>新學年第一次班會</h3>
+          <p class="flow-sub">目標：記住名字、打破小圈子、讓學生覺得這班可以待。</p>
+          <ol class="timeline">
+            <li><span class="t">0–8 分鐘</span><span class="n">你選邊站</span><span class="d">暖場，順便做興趣調查。</span></li>
+            <li class="key"><span class="t">8–23 分鐘</span><span class="n">尋人 Bingo</span><span class="d">走動、簽名、開口講第一句話。</span></li>
+            <li><span class="t">23–35 分鐘</span><span class="n">兩個真相一個謊</span><span class="d">小組分享，建立「可以被追問」的安全感。</span></li>
+            <li><span class="t">35–40 分鐘</span><span class="n">一分鐘靜心</span><span class="d">把聲量收回來。</span></li>
+            <li><span class="t">40–45 分鐘</span><span class="n">一分鐘反思</span><span class="d">收集「想這班變成怎樣」。</span></li>
+          </ol>
+        </article>
+
+        <article class="flow">
+          <span class="flow-tag">學期初 · 45 分鐘</span>
+          <h3>共創班規</h3>
+          <p class="flow-sub">目標：規矩由學生自己寫，執行時才有底氣。</p>
+          <ol class="timeline">
+            <li><span class="t">0–5 分鐘</span><span class="n">情緒溫度計</span><span class="d">先安頓情緒，再談規則。</span></li>
+            <li><span class="t">5–13 分鐘</span><span class="n">共同點分組</span><span class="d">用最後一題直接分成 4 組。</span></li>
+            <li class="key"><span class="t">13–38 分鐘</span><span class="n">班規共創（世界咖啡館）</span><span class="d">四桌輪轉，歸納成 5 條可觀察的規則。</span></li>
+            <li><span class="t">38–45 分鐘</span><span class="n">承諾牆</span><span class="d">每人寫一句具體承諾，貼成牆。</span></li>
+          </ol>
+        </article>
+
+        <article class="flow">
+          <span class="flow-tag">衝突後 · 45 分鐘</span>
+          <h3>班級修復</h3>
+          <p class="flow-sub">目標：不公審任何人，只談處境與選擇。</p>
+          <ol class="timeline">
+            <li><span class="t">0–5 分鐘</span><span class="n">情緒溫度計</span><span class="d">匿名，讓沉默的人也有位置。</span></li>
+            <li class="key"><span class="t">5–20 分鐘</span><span class="n">齊眉棍</span><span class="d">用「一齊做一件簡單事」重建協調感。</span></li>
+            <li><span class="t">20–40 分鐘</span><span class="n">如果是我（情境劇）</span><span class="d">演「原本會怎樣」與「可以怎樣」。</span></li>
+            <li><span class="t">40–45 分鐘</span><span class="n">一分鐘反思</span><span class="d">寫下「我下次會唔會唔同」。</span></li>
+          </ol>
+        </article>
+
+        <article class="flow">
+          <span class="flow-tag">考試後 · 30 分鐘</span>
+          <h3>減壓放電</h3>
+          <p class="flow-sub">目標：笑一場，把考試的緊繃卸下，不用談成績。</p>
+          <ol class="timeline">
+            <li><span class="t">0–10 分鐘</span><span class="n">猜拳淘汰賽</span><span class="d">全班合成一條長龍，很有畫面。</span></li>
+            <li><span class="t">10–18 分鐘</span><span class="n">反應王</span><span class="d">小組對戰，笑聲最大的一段。</span></li>
+            <li class="key"><span class="t">18–28 分鐘</span><span class="n">優點大轟炸</span><span class="d">把能量轉成善意，後座力強。</span></li>
+            <li><span class="t">28–30 分鐘</span><span class="n">一分鐘靜心</span><span class="d">收心，下一節才可以上課。</span></li>
+          </ol>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ principles ============ -->
+  <section class="section" id="principles">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>帶活動的 6 個心法</h2>
+        <p>同一個遊戲，有人帶得全場投入，有人帶得一團混亂。差別通常在這裡。</p>
+      </div>
+      <div class="principles">
+        <article class="principle">
+          <p class="num">01</p>
+          <h3>先講規則，後講玩法</h3>
+          <p>一次只講一條規則，講完即示範。三條以上學生只會記得最後一條。</p>
+        </article>
+        <article class="principle">
+          <p class="num">02</p>
+          <h3>分組要快，不要「自己揀」</h3>
+          <p>「自己組隊」永遠會剩下幾個人在角落。用報數、共同點分組或隨機分組器，30 秒完成。</p>
+        </article>
+        <article class="principle">
+          <p class="num">03</p>
+          <h3>時間要講明，並且倒數</h3>
+          <p>說「8 分鐘」然後真的按下計時器。學生看得見終點，才會願意投入。</p>
+        </article>
+        <article class="principle">
+          <p class="num">04</p>
+          <h3>輸贏要淡</h3>
+          <p>用班級積分、掌聲、稱號代替物質獎品。獎品越貴，輸的那一組越難受。</p>
+        </article>
+        <article class="principle">
+          <p class="num">05</p>
+          <h3>每個遊戲後留 3 分鐘反思</h3>
+          <p>只問三條：「剛才發生甚麼事？」「誰做了甚麼令件事變好？」「下一次可以點做？」</p>
+        </article>
+        <article class="principle">
+          <p class="num">06</p>
+          <h3>收尾要有儀式</h3>
+          <p>靜心一分鐘、感謝圈或一句承諾。沒有收尾的班會，等於把一群過熱的學生推去下一節課。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ tools ============ -->
+  <section class="tools-band" id="tools">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>班會工具箱</h2>
+        <p>不用另開 App。計時器與分組器就在這一頁，投影出來全班都看到。</p>
+      </div>
+
+      <div class="tools-grid">
+
+        <!-- timer -->
+        <div class="tool">
+          <h3><svg width="17" height="17" aria-hidden="true"><use href="#i-timer"/></svg>活動計時器</h3>
+          <div style="position:relative;display:grid;place-items:center;padding:6px 0 10px">
+            <svg width="132" height="132" viewBox="0 0 120 120" aria-hidden="true" style="transform:rotate(-90deg)">
+              <circle cx="60" cy="60" r="52" fill="none" stroke="#3A332B" stroke-width="7"/>
+              <circle id="timerRing" cx="60" cy="60" r="52" fill="none" stroke="#E9C46A" stroke-width="7"
+                      stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="0"
+                      style="transition:stroke-dashoffset .2s linear, stroke .3s"/>
+            </svg>
+            <div class="timer-display" id="timerText" style="position:absolute">5:00</div>
+          </div>
+          <div class="timer-presets">
+            <button type="button" data-min="1">1 分</button>
+            <button type="button" data-min="2">2 分</button>
+            <button type="button" data-min="3">3 分</button>
+            <button type="button" data-min="5">5 分</button>
+            <button type="button" data-min="10">10 分</button>
+            <button type="button" data-min="15">15 分</button>
+          </div>
+          <div class="tool-actions">
+            <button class="primary" id="timerToggle" type="button">開始</button>
+            <button id="timerReset" type="button">重設</button>
+          </div>
+          <div class="inline-fields">
+            <div>
+              <label for="timerMin">自訂分鐘</label>
+              <input id="timerMin" type="number" min="1" max="120" value="8">
+            </div>
+            <div style="display:flex;align-items:flex-end">
+              <button class="btn-mini" id="timerSubmit" type="button" style="width:100%;justify-content:center;background:transparent;border-color:#4A4137;color:#EFE7DA">設定</button>
+            </div>
+          </div>
+          <p class="tool-note">時間到會響三聲。投影時把瀏覽器放大（Ctrl/⌘ +）效果最好。</p>
+        </div>
+
+        <!-- groups -->
+        <div class="tool">
+          <h3><svg width="17" height="17" aria-hidden="true"><use href="#i-group"/></svg>隨機分組器</h3>
+          <p>貼上全班名單（每行一個，或用逗號分隔），即時分成平均小組。</p>
+          <div>
+            <label for="namesInput">學生名單</label>
+            <textarea id="namesInput" rows="6" placeholder="陳大文&#10;李小明&#10;黃小美&#10;…"></textarea>
+          </div>
+          <div class="inline-fields">
+            <div>
+              <label for="groupCount">組數</label>
+              <input id="groupCount" type="number" min="2" max="12" value="4">
+            </div>
+            <div style="display:flex;align-items:flex-end;gap:8px">
+              <button class="btn-mini" id="groupBtn" type="button" style="flex:1;justify-content:center;background:#F1E7D8;color:#201C17;border-color:#F1E7D8;font-weight:700">分組</button>
+              <button class="btn-mini" id="groupCopy" type="button" style="background:transparent;border-color:#4A4137;color:#EFE7DA">複製</button>
+            </div>
+          </div>
+          <div class="group-out" id="groupOut"></div>
+          <p class="tool-note">分組結果只存在這一頁，不會上傳到任何地方。</p>
+        </div>
+
+        <!-- quick guide -->
+        <div class="tool">
+          <h3><svg width="17" height="17" aria-hidden="true"><use href="#i-arrow"/></svg>30 秒選遊戲</h3>
+          <p style="color:#C9BFAF">不知道從哪裡開始？按下面的情況，直接跳到合適的類型。</p>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
+            <button class="btn-mini" type="button" data-jump="icebreaker" style="background:transparent;border-color:#4A4137;color:#EFE7DA;justify-content:flex-start">新學年、未記得住名字 →</button>
+            <button class="btn-mini" type="button" data-jump="teamwork" style="background:transparent;border-color:#4A4137;color:#EFE7DA;justify-content:flex-start">班裡分黨分派、不合作 →</button>
+            <button class="btn-mini" type="button" data-jump="talk" style="background:transparent;border-color:#4A4137;color:#EFE7DA;justify-content:flex-start">常常吵架、訊息走樣 →</button>
+            <button class="btn-mini" type="button" data-jump="reflect" style="background:transparent;border-color:#4A4137;color:#EFE7DA;justify-content:flex-start">要談班規、講感受 →</button>
+            <button class="btn-mini" type="button" data-jump="wind" style="background:transparent;border-color:#4A4137;color:#EFE7DA;justify-content:flex-start">活動完，要收心 →</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand">班會好好玩 · Class Party Games</p>
+      <p>為香港中學班主任而做。遊戲設計以「低物資、低準備、高參與」為原則，適合 25–45 分鐘的班會時段。</p>
+      <p class="no-print">使用建議：投影這一頁帶活動；按「列印」可輸出成 A4 遊戲卡，放進班主任手冊。</p>
+    </div>
+    <div style="text-align:right" class="no-print">
+      <p>© <span id="year">2026</span> · 可自由用於課堂教學</p>
+      <p>純靜態網站，可離線使用</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/games.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  // 「30 秒選遊戲」捷徑
+  document.querySelectorAll('[data-jump]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var cat = btn.getAttribute('data-jump');
+      var chip = document.querySelector('#catChips .chip[data-cat="' + cat + '"]');
+      if (chip) chip.click();
+      document.getElementById('games').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+</body>
+</html>
