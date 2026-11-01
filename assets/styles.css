@@ -337,6 +337,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   font-size: 12.5px; background: #F4EEE4; color: var(--ink-soft);
   padding: 4px 10px; border-radius: 6px;
 }
+.platform-list li { background: #E0F1F4; color: #0B5B6B; font-weight: 500; }
 
 .empty {
   grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: var(--muted);
@@ -397,6 +398,38 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .group-row b { color: #E9A785; margin-right: 6px; }
 
 .tool-note { font-size: 12px; color: #8C8273; }
+
+.tool-wide { grid-column: 1 / -1; }
+.jump-grid { display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); }
+.jump-grid .btn-mini {
+  background: transparent; border-color: #4A4137; color: #EFE7DA;
+  justify-content: flex-start; padding: 10px 14px; font-size: 13px;
+}
+.jump-grid .btn-mini:hover { border-color: #8A7C69; color: #fff; }
+
+/* ---------------- Scoreboard ---------------- */
+
+.score-list { display: flex; flex-direction: column; gap: 7px; }
+
+.score-row {
+  display: grid; grid-template-columns: 1fr auto auto auto; align-items: center; gap: 8px;
+  background: #1E1A16; border: 1px solid #3A332B; border-radius: 9px; padding: 7px 9px;
+}
+.score-row.leading { border-color: #E9A785; }
+.score-name {
+  font-size: 13.5px; color: #E4DACB; padding: 2px 4px; border-radius: 5px; outline: none;
+  border-bottom: 1px dashed transparent; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.score-name:focus { border-bottom-color: #8A7C69; background: #26211B; }
+.score-val {
+  font-family: var(--font-serif); font-size: 20px; font-weight: 700; min-width: 34px;
+  text-align: right; font-variant-numeric: tabular-nums; color: #F6F1E8;
+}
+.score-btn {
+  width: 26px; height: 26px; border-radius: 7px; border: 1px solid #4A4137;
+  background: transparent; color: #D9CFC0; font-size: 15px; line-height: 1; display: grid; place-items: center;
+}
+.score-btn:hover { background: #3A332B; color: #fff; }
 
 /* ---------------- Flow templates ---------------- */
 

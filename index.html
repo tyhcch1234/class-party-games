@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>班會好好玩 · 中學生班級經營遊戲庫</title>
-<meta name="description" content="38 個適合中學生的班會及派對遊戲，按時間、人數、場地篩選，附帶領貼士、變化玩法與 5 個 45 分鐘班會流程範本。">
+<meta name="description" content="48 個適合中學生的班會及派對遊戲，含 10 個線上同玩版本。按時間、人數、場地篩選，附帶領貼士、變化玩法與 6 個班會流程範本。">
 <meta name="theme-color" content="#FBF8F2">
 <meta property="og:title" content="班會好好玩 · 中學生班級經營遊戲庫">
-<meta property="og:description" content="38 個班會遊戲 + 計時器 + 隨機分組 + 班會流程範本。開學、考試後、衝突修復，一頁搞掂。">
+<meta property="og:description" content="48 個班會遊戲（含線上同玩）+ 計時器 + 隨機分組 + 計分板 + 班會流程範本。開學、考試後、衝突修復、網課，一頁搞掂。">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,6 +53,12 @@
     <symbol id="i-group" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/>
     </symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2.5 9a16 16 0 0 1 19 0"/><path d="M5.5 12.5a11 11 0 0 1 13 0"/><path d="M8.5 16a6 6 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1.2" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 4h10v5a5 5 0 0 1-10 0Z"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M12 14v4"/><path d="M8 21h8"/>
+    </symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>
     </symbol>
@@ -86,7 +92,7 @@
       <span class="eyebrow"><span class="dot"></span>中學 · 班主任 · 班會</span>
       <h1>把班會，變成<br>全班<em>期待</em>的那一節課。</h1>
       <p class="lede">
-        38 個為中學生設計的派對遊戲，按時間、人數、場地即時篩選。每個遊戲都寫明玩法、物資、帶領貼士與變化版本——不是為了熱鬧，而是為了讓班裡多一點信任、少一點磨擦。
+        48 個為中學生設計的班會遊戲，實體與線上各一套玩法，按時間、人數、場地即時篩選。每個遊戲都寫明玩法、物資、帶領貼士與變化版本——不是為了熱鬧，而是為了讓班裡多一點信任、少一點磨擦。
       </p>
       <div class="hero-actions">
         <button class="btn btn-primary" type="button" data-random>
@@ -100,10 +106,10 @@
       </div>
 
       <div class="hero-stats">
-        <div class="stat"><b id="countTotal">38</b><span>個遊戲</span></div>
-        <div class="stat"><b>6</b><span>大類型</span></div>
-        <div class="stat"><b>5</b><span>班會流程範本</span></div>
-        <div class="stat"><b>0</b><span>需要下載</span></div>
+        <div class="stat"><b id="countTotal">48</b><span>個遊戲</span></div>
+        <div class="stat"><b>7</b><span>大類型</span></div>
+        <div class="stat"><b>10</b><span>線上同玩</span></div>
+        <div class="stat"><b>6</b><span>班會流程範本</span></div>
       </div>
     </div>
   </section>
@@ -141,13 +147,14 @@
             <option value="all">任何場地</option>
             <option value="課室">課室</option>
             <option value="操場">操場／戶外</option>
+            <option value="線上">線上（各自一部裝置）</option>
           </select>
         </div>
         <button class="btn-mini" id="favOnly" type="button" aria-pressed="false">
           <svg width="14" height="14" aria-hidden="true"><use href="#i-star"/></svg>只看收藏
         </button>
         <button class="btn-mini" id="resetBtn" type="button">重設</button>
-        <span class="result-count" id="count">38 個遊戲</span>
+        <span class="result-count" id="count">48 個遊戲</span>
       </div>
       <div class="filter-row">
         <div class="chips" id="catChips" role="group" aria-label="遊戲類型"></div>
@@ -238,6 +245,19 @@
           </ol>
         </article>
 
+        <article class="flow">
+          <span class="flow-tag" style="color:#0E7490;background:#E0F1F4">網課 · 40 分鐘</span>
+          <h3>線上同步班會</h3>
+          <p class="flow-sub">目標：不靠開 mic 輪流講，用投票、聊天室與分組房保持互動。</p>
+          <ol class="timeline">
+            <li><span class="t">0–5 分鐘</span><span class="n">線上情緒溫度計</span><span class="d">Mentimeter 文字雲，匿名。</span></li>
+            <li class="key"><span class="t">5–18 分鐘</span><span class="n">線上 Bingo 尋人</span><span class="d">共用表格互相填名，人人有參與。</span></li>
+            <li><span class="t">18–30 分鐘</span><span class="n">線上誰是臥底</span><span class="d">分組房同時進行，主持人輪流巡房。</span></li>
+            <li><span class="t">30–37 分鐘</span><span class="n">線上優點牆</span><span class="d">Padlet 匿名便條，10 分鐘收集。</span></li>
+            <li><span class="t">37–40 分鐘</span><span class="n">聊天室一句話反思</span><span class="d">打完「今日帶走嘅一樣嘢」才准離開。</span></li>
+          </ol>
+        </article>
+
       </div>
     </div>
   </section>
@@ -289,7 +309,7 @@
     <div class="wrap">
       <div class="section-head">
         <h2>班會工具箱</h2>
-        <p>不用另開 App。計時器與分組器就在這一頁，投影出來全班都看到。</p>
+        <p>不用另開 App。計時器、分組器、計分板都在這一頁，投影出來全班都看到；網課時分享畫面亦一樣。</p>
       </div>
 
       <div class="tools-grid">
@@ -352,16 +372,29 @@
           <p class="tool-note">分組結果只存在這一頁，不會上傳到任何地方。</p>
         </div>
 
-        <!-- quick guide -->
+        <!-- scoreboard -->
         <div class="tool">
+          <h3><svg width="17" height="17" aria-hidden="true"><use href="#i-trophy"/></svg>班級計分板</h3>
+          <p>分組比賽用。投影出來，學生自己看得到分數，不用你記。</p>
+          <div class="score-list" id="scoreList"></div>
+          <div class="tool-actions">
+            <button id="scoreReset" type="button" style="flex:0 0 auto;padding:10px 16px">歸零</button>
+            <button id="scoreAdd" type="button" style="flex:0 0 auto;padding:10px 16px">加一組</button>
+          </div>
+          <p class="tool-note">點組名可以改名。分數只存在這個瀏覽器。</p>
+        </div>
+
+        <!-- quick guide -->
+        <div class="tool tool-wide">
           <h3><svg width="17" height="17" aria-hidden="true"><use href="#i-arrow"/></svg>30 秒選遊戲</h3>
           <p style="color:#C9BFAF">不知道從哪裡開始？按下面的情況，直接跳到合適的類型。</p>
-          <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
-            <button class="btn-mini" type="button" data-jump="icebreaker" style="background:transparent;border-color:#4A4137;color:#EFE7DA;justify-content:flex-start">新學年、未記得住名字 →</button>
-            <button class="btn-mini" type="button" data-jump="teamwork" style="background:transparent;border-color:#4A4137;color:#EFE7DA;justify-content:flex-start">班裡分黨分派、不合作 →</button>
-            <button class="btn-mini" type="button" data-jump="talk" style="background:transparent;border-color:#4A4137;color:#EFE7DA;justify-content:flex-start">常常吵架、訊息走樣 →</button>
-            <button class="btn-mini" type="button" data-jump="reflect" style="background:transparent;border-color:#4A4137;color:#EFE7DA;justify-content:flex-start">要談班規、講感受 →</button>
-            <button class="btn-mini" type="button" data-jump="wind" style="background:transparent;border-color:#4A4137;color:#EFE7DA;justify-content:flex-start">活動完，要收心 →</button>
+          <div class="jump-grid">
+            <button class="btn-mini" type="button" data-jump="icebreaker">新學年、未記得住名字 →</button>
+            <button class="btn-mini" type="button" data-jump="teamwork">班裡分黨分派、不合作 →</button>
+            <button class="btn-mini" type="button" data-jump="talk">常常吵架、訊息走樣 →</button>
+            <button class="btn-mini" type="button" data-jump="reflect">要談班規、講感受 →</button>
+            <button class="btn-mini" type="button" data-jump="wind">活動完，要收心 →</button>
+            <button class="btn-mini" type="button" data-jump="online">網課、學生自備裝置 →</button>
           </div>
         </div>
 

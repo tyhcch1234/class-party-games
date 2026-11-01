@@ -4,7 +4,7 @@
 (function () {
   'use strict';
 
-  var CAT_ORDER = ['icebreaker', 'teamwork', 'talk', 'brain', 'reflect', 'wind'];
+  var CAT_ORDER = ['icebreaker', 'teamwork', 'talk', 'brain', 'reflect', 'wind', 'online'];
   var FAV_KEY = 'bgh-fav-v1';
   var OPEN_KEY = 'bgh-open-v1';
 
@@ -102,7 +102,7 @@
 
   function metaHtml(g) {
     var cat = CATS[g.cat];
-    var placeIcon = g.place === '操場' ? 'i-pin' : 'i-door';
+    var placeIcon = g.place === '操場' ? 'i-pin' : (g.place === '線上' ? 'i-wifi' : 'i-door');
     return '' +
       '<div class="meta">' +
         '<span><svg width="13" height="13" aria-hidden="true"><use href="#i-time"/></svg>' + g.duration + ' 分鐘</span>' +
@@ -119,15 +119,20 @@
     var materials = g.materials.length
       ? '<ul class="material-list">' + g.materials.map(function (m) { return '<li>' + esc(m) + '</li>'; }).join('') + '</ul>'
       : '<p class="tool-note" style="color:var(--muted);margin:0 0 18px">無需物資</p>';
+    var platform = (g.platform && g.platform.length)
+      ? '<p class="block-title">使用平台</p><ul class="material-list platform-list">' +
+        g.platform.map(function (m) { return '<li>' + esc(m) + '</li>'; }).join('') + '</ul>'
+      : '';
 
     return '' +
       '<div class="card-body">' +
         '<div class="col-a">' +
           '<p class="block-title">玩法</p>' +
           '<ol class="steps">' + steps + '</ol>' +
-          (g.warn ? '<p class="callout"><b>安全提示：</b>' + esc(g.warn) + '</p>' : '') +
+          (g.warn ? '<p class="callout"><b>' + (g.cat === 'online' ? '注意：' : '安全提示：') + '</b>' + esc(g.warn) + '</p>' : '') +
         '</div>' +
         '<div class="col-b">' +
+          platform +
           '<p class="block-title">需要物資</p>' + materials +
           '<p class="block-title">帶領貼士</p>' +
           '<ul class="tips">' + tips + '</ul>' +
@@ -435,6 +440,70 @@
       if (!body.querySelector('.card-body')) body.innerHTML = detailHtml(g);
     });
   });
+
+  /* ---------------- Scoreboard ---------------- */
+
+  var SCORE_KEY = 'bgh-score-v1';
+  var scores = readJSON(SCORE_KEY, [
+    { name: '第 1 組', score: 0 },
+    { name: '第 2 組', score: 0 },
+    { name: '第 3 組', score: 0 },
+    { name: '第 4 組', score: 0 }
+  ]);
+  if (!Array.isArray(scores) || !scores.length) {
+    scores = [{ name: '第 1 組', score: 0 }];
+  }
+
+  function renderScores() {
+    var list = $('#scoreList');
+    if (!list) return;
+    var best = Math.max.apply(null, scores.map(function (t) { return t.score; }));
+    list.innerHTML = scores.map(function (t, i) {
+      var lead = t.score > 0 && t.score === best ? ' leading' : '';
+      return '<div class="score-row' + lead + '" data-team="' + i + '">' +
+        '<span class="score-name" contenteditable="true" spellcheck="false">' + esc(t.name) + '</span>' +
+        '<span class="score-val">' + t.score + '</span>' +
+        '<button class="score-btn" type="button" data-delta="-1" aria-label="減一分">−</button>' +
+        '<button class="score-btn" type="button" data-delta="1" aria-label="加一分">+</button>' +
+        '</div>';
+    }).join('');
+    save(SCORE_KEY, scores);
+  }
+
+  if ($('#scoreList')) {
+    renderScores();
+
+    $('#scoreList').addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-delta]');
+      if (!btn) return;
+      var row = btn.closest('[data-team]');
+      var i = Number(row.getAttribute('data-team'));
+      scores[i].score = Math.max(0, scores[i].score + Number(btn.getAttribute('data-delta')));
+      renderScores();
+    });
+
+    $('#scoreList').addEventListener('blur', function (e) {
+      var nameEl = e.target.closest('.score-name');
+      if (!nameEl) return;
+      var row = nameEl.closest('[data-team]');
+      var i = Number(row.getAttribute('data-team'));
+      var text = nameEl.textContent.trim().slice(0, 12);
+      scores[i].name = text || '第 ' + (i + 1) + ' 組';
+      renderScores();
+    }, true);
+
+    $('#scoreAdd').addEventListener('click', function () {
+      if (scores.length >= 8) { toast('最多 8 組'); return; }
+      scores.push({ name: '第 ' + (scores.length + 1) + ' 組', score: 0 });
+      renderScores();
+    });
+
+    $('#scoreReset').addEventListener('click', function () {
+      scores.forEach(function (t) { t.score = 0; });
+      renderScores();
+      toast('分數已歸零');
+    });
+  }
 
   /* ---------------- Boot ---------------- */
 
