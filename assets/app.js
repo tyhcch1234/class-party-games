@@ -505,6 +505,89 @@
     });
   }
 
+  /* ---------------- Breakout room host cards ---------------- */
+
+  function roomCardHtml(r) {
+    var qs = r.questions.map(function (q) { return '<li>' + esc(q) + '</li>'; }).join('');
+    return '' +
+      '<article class="room" id="r-' + r.id + '" data-room="' + r.id + '">' +
+        '<div class="room-top">' +
+          '<span class="room-tag">' + esc(r.tag) + '</span>' +
+          '<span class="room-min">' + r.minutes + ' 分鐘</span>' +
+          '<button class="copy-btn" type="button" data-copy-room="' + r.id + '">複製全文</button>' +
+        '</div>' +
+        '<h3>' + esc(r.title) + '</h3>' +
+        '<p class="room-goal">' + esc(r.goal) + '</p>' +
+        '<div class="room-block"><h4>開場（照讀）</h4><p class="room-quote">' + esc(r.open) + '</p></div>' +
+        '<div class="room-block"><h4>討論（每人最少講一次）</h4><ol class="room-q">' + qs + '</ol></div>' +
+        '<div class="room-block"><h4>收尾（最後一分鐘）</h4><p class="room-quote">' + esc(r.closing) + '</p></div>' +
+        '<p class="room-deliver">帶回主會議室：' + esc(r.deliver) + '</p>' +
+        '<p class="room-tip"><b>主持貼士：</b>' + esc(r.tip) + '</p>' +
+      '</article>';
+  }
+
+  function roomToText(r) {
+    var lines = [
+      '【分組房主持卡 · ' + r.title + '】',
+      '時間：' + r.minutes + ' 分鐘',
+      '',
+      '■ 開場（照讀）',
+      r.open,
+      '',
+      '■ 討論（每人最少講一次）'
+    ];
+    r.questions.forEach(function (q, i) { lines.push((i + 1) + '. ' + q); });
+    lines.push('', '■ 收尾（最後一分鐘）', r.closing, '', '■ 帶回主會議室', r.deliver);
+    return lines.join('\n');
+  }
+
+  function legacyCopy(text) {
+    return new Promise(function (resolve, reject) {
+      try {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.top = '-1000px';
+        document.body.appendChild(ta);
+        ta.select();
+        var ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        ok ? resolve() : reject(new Error('copy failed'));
+      } catch (err) { reject(err); }
+    });
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) {
+      return navigator.clipboard.writeText(text).catch(function () { return legacyCopy(text); });
+    }
+    return legacyCopy(text);
+  }
+
+  var roomsGrid = $('#roomsGrid');
+  if (roomsGrid && typeof ROOMS !== 'undefined') {
+    roomsGrid.innerHTML = ROOMS.map(roomCardHtml).join('');
+
+    roomsGrid.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-copy-room]');
+      if (!btn) return;
+      var room = ROOMS.filter(function (r) { return r.id === btn.getAttribute('data-copy-room'); })[0];
+      if (!room) return;
+      copyText(roomToText(room)).then(function () {
+        btn.classList.add('done');
+        btn.textContent = '已複製';
+        toast('已複製「' + room.title + '」，貼進分組房公告即可');
+        setTimeout(function () {
+          btn.classList.remove('done');
+          btn.textContent = '複製全文';
+        }, 2200);
+      }, function () {
+        toast('複製失敗，請長按選取文字');
+      });
+    });
+  }
+
   /* ---------------- Boot ---------------- */
 
   buildChips();

@@ -75,6 +75,7 @@
     <nav class="nav" aria-label="主要導覽">
       <a href="#games">遊戲庫</a>
       <a href="#flows">班會流程</a>
+      <a href="#rooms">主持卡</a>
       <a href="#principles">帶活動心法</a>
       <a href="#tools">工具箱</a>
     </nav>
@@ -262,6 +263,24 @@
     </div>
   </section>
 
+  <!-- ============ breakout room host cards ============ -->
+  <section class="section" id="rooms">
+    <div class="wrap">
+      <div class="section-head stacked">
+        <h2>線上分組房主持卡</h2>
+        <p>教師只有一雙手，五間房同時開。以下八張卡交給組長自己帶：照讀開場、三條問題、一句收尾。按「複製」即可貼進 Zoom／Meet 的分組房公告或聊天室。</p>
+      </div>
+
+      <div class="rooms-note">
+        <div><b>組長只做三件事</b><span>讀開場 → 點名輪流 → 帶一句返大組</span></div>
+        <div><b>每人講一次</b><span>講完先換人；唔想出聲可以打 chat</span></div>
+        <div><b>8–12 分鐘</b><span>配合本頁計時器，時間到一齊返主會議室</span></div>
+      </div>
+
+      <div class="rooms-grid" id="roomsGrid"></div>
+    </div>
+  </section>
+
   <!-- ============ principles ============ -->
   <section class="section" id="principles">
     <div class="wrap">
@@ -421,6 +440,7 @@
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="assets/games.js"></script>
+<script src="assets/rooms.js"></script>
 <script src="assets/app.js"></script>
 <script>
   // 「30 秒選遊戲」捷徑
